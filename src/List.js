@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import './list.css'
+
 class List extends Component {
   constructor(props) {
     super(props);
@@ -25,8 +27,34 @@ class List extends Component {
   render() {
     return (
       <div>
-        <div>Count: {this.state.count}</div>
-        {this.state.persons.map((person) => (<div key={person.id}>{person.name}</div>))}
+        <table class="list">
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Funds</th>
+            <th>City</th>
+            <th>Phone</th>
+          </tr>
+          {this.state.persons.map((person) => (
+          <tr>
+            <th key={person.id}>
+              <input type="text" value={person.name}/>
+            </th>
+            <th key={person.id}>
+            <input type="text" value={person.email}/>
+            </th>
+            <th key={person.id}>
+            <input type="text" value={person.funds}/>
+            </th>
+            <th key={person.id}>
+            <input type="text" value={person.city}/>
+            </th>
+            <th key={person.id}>
+            <input type="text" value={person.phone}/>
+            </th>
+          </tr>
+            ))}
+          </table>
       </div>
     )};
 }
