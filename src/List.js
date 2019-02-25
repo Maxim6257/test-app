@@ -24,10 +24,17 @@ class List extends Component {
     });
   }
 
+  // componentDidUpdate(persons) {
+  //   axios({
+  //     url: 'http://localhost:8080/update/id',
+  //     method: 'put',
+  //   })
+  // }
+
   render() {
     return (
       <div>
-        <table class="list">
+        <table className="list">
           <tr>
             <th>Name</th>
             <th>Email</th>
@@ -38,7 +45,7 @@ class List extends Component {
           {this.state.persons.map((person) => (
           <tr>
             <th key={person.id}>
-              <input type="text" value={person.name}/>
+            <input type="text" value={person.name}/>
             </th>
             <th key={person.id}>
             <input type="text" value={person.email}/>
